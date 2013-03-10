@@ -19,6 +19,10 @@ Alternatively use the GitHub Mac OSX App to import in a new repo.
 
 You will need to enter your MySQL database username and password credentials into /application/config/database.php under 'Database Connections'
 
+Note, if you are going to be contributing to the BookHub repo, it is best to remove the database configuration from the repo so that your credentials aren't shared with the world. To do so run the following command:
+
+`git update-index --assume-unchanged application/config/database.php`
+
 ### Create Database
 
 Open a terminal window, and cd into the BookHub directory.

@@ -30,4 +30,5 @@ Open a terminal window, and cd into the BookHub directory.
 Run the following commands:
 
 `php artisan migrate:install`
+
 `php artisan migrate`

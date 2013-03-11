@@ -32,10 +32,11 @@
 |
 */
 
-Route::get('/', function()
-{
-	return View::make('ebook.index');
-});
+Route::get('/', 'ebook@index');
+
+Route::controller('ebook');
+
+Route::controller('user');
 
 /*
 |--------------------------------------------------------------------------

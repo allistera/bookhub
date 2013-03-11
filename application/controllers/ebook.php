@@ -6,7 +6,8 @@ class Ebook_Controller extends Base_Controller {
 
 	public function get_index()
     {
-
+        
+        return View::make('ebook.index');
     }
 
 }

@@ -6,8 +6,9 @@ class Ebook_Controller extends Base_Controller {
 
 	public function get_index()
     {
-        
-        return View::make('ebook.index');
+        $ebooks = Ebook::all();
+
+        return View::make('ebook.index')->with('ebooks', $ebooks);
     }
 
     public function get_create()

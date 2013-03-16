@@ -6,6 +6,18 @@
     });
 
     $(".viewDetails").click(function() {
+      var bookID = $(this).attr('id');
+
+
+      $.getJSON("ebook/get/" + bookID, function(json) {
+        $("#bookDetailsTitle").html(json.title);
+        $("#bookDetailsDesc").html(json.description);
+        $("#bookDetailsGenre").html(json.genre);
+        $("#bookDetailsPublisher").html(json.publisher);
+        $("#bookDetailsPublishDate").html(json.publish_date);
+        $("#bookDetailsUploadDate").html(json.created_at);
+      });
+
         $(".bookDetails").animate({width:'toggle'},350);
         return false;
     });

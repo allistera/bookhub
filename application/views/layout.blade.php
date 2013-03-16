@@ -29,7 +29,7 @@
                 <ul>
                     <li id="active"><a href="#">Whats Hot</a></li>
                     <li><a href="#">Latest</a></li>
-                    <li class="menuSplitter"><img src="img/menuSplitter.gif"></li>
+                    <li class="menuSplitter">{{ HTML::image('img/menuSplitter.gif') }}</li>
                     <li><a href="#" id="genresOpen">Genres</a></li>
                 </ul>
             </nav>
@@ -37,7 +37,7 @@
 
             <div id="userBox">
                 <a href="#" id="userDetails">
-                    <img src="img/menuArrow.gif">
+                    {{ HTML::image('img/menuArrow.gif') }}
                     John Doe
                 </a>
                 <ul class="sub_menu" style="display: none">

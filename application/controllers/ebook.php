@@ -11,6 +11,11 @@ class Ebook_Controller extends Base_Controller {
         return View::make('ebook.index')->with('ebooks', $ebooks);
     }
 
+    public function get_get($id)
+    {
+        return Response::eloquent(Ebook::find($id));
+    }
+
     public function get_create()
     {
         return View::make('ebook.create');

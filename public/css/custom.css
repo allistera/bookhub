@@ -3,7 +3,7 @@
   Site wide styles
    ========================================================================== */
 
-body {background: url(../img/sectionbg.png);}
+body {background: url(/img/sectionbg.png);}
 
 header{
     width: 100%;
@@ -376,7 +376,7 @@ body,p,ul,ol,dl,textarea,input {
 .messageArea #loading {  
     width:32px;  
     height:32px;  
-    background-image:url(../img/loading.gif);  
+    background-image:url(/img/loading.gif);  
     display:block;  
     position:absolute;  
     rightright:130px;  
@@ -392,7 +392,7 @@ body,p,ul,ol,dl,textarea,input {
     -webkit-border-radius:8px;  
     -moz-border-radius:8px;  
     border-radius:8px;  
-    background:#FFE6E6 url(../img/cancel_48.png) no-repeat 405px center;  
+    background:#FFE6E6 url(/img/cancel_48.png) no-repeat 405px center;  
     display:none;  
 }  
 #errors li {  
@@ -417,7 +417,7 @@ body,p,ul,ol,dl,textarea,input {
     -webkit-border-radius:8px;  
     -moz-border-radius:8px;  
     border-radius:8px;  
-    background:#D3EDD3 url(../img/accepted_48.png) no-repeat 405px center;  
+    background:#D3EDD3 url(/img/accepted_48.png) no-repeat 405px center;  
     font-weight:bold;  
     display:none;  
 }  

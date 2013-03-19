@@ -22,7 +22,7 @@ header{
     -moz-box-shadow: 1px 3px 7px #8A8A8A;
     -webkit-box-shadow: 1px 3px 7px #8A8A8A;
     box-shadow: 1px 3px 7px #8A8A8A;
-    z-index:9999;
+    z-index:99;
 }
     header h1{
         margin: 0;
@@ -237,7 +237,7 @@ footer{
   top:40px;
   right:0;
   position:fixed;
-  z-index: 998;
+  z-index: 97;
   padding: 20px;
 }
     .bookInfo {
@@ -383,47 +383,8 @@ body,p,ul,ol,dl,textarea,input {
     bottombottom:16px;  
     display:none;  
 }  
-#errors {  
-    border:solid 1px #E58E8E;  
-    padding:10px;  
-    margin:25px 0px;  
-    display:block;  
-    width:437px;  
-    -webkit-border-radius:8px;  
-    -moz-border-radius:8px;  
-    border-radius:8px;  
-    background:#FFE6E6 url(/img/cancel_48.png) no-repeat 405px center;  
-    display:none;  
-}  
-#errors li {  
-    padding:2px;  
-    list-style:none;  
-}  
-#errors li:before {  
-    content: ' - ';  
-}  
-#errors #info {  
-    font-weight:bold;  
-}  
-#errors #info:before {  
-    content: '';  
-}  
-#success {  
-    border:solid 1px #83D186;  
-    padding:25px 10px;  
-    margin:25px 0px;  
-    display:block;  
-    width:437px;  
-    -webkit-border-radius:8px;  
-    -moz-border-radius:8px;  
-    border-radius:8px;  
-    background:#D3EDD3 url(/img/accepted_48.png) no-repeat 405px center;  
-    font-weight:bold;  
-    display:none;  
-}  
-#errors.visible, #success.visible {  
-    display:block;  
-}  
+
+
 #req-field-desc {  
     font-style:italic;  
 }  
@@ -450,3 +411,31 @@ input.placeholder-text, textarea.placeholder-text  {
     color:#CCC;  
     font-style:italic;  
 } 
+
+/* Message notifications */
+.info, .success, .error, .validation {
+  border: 1px solid;
+  margin: 60px auto -60px auto;
+  padding:15px 10px 15px 50px;
+  background-repeat: no-repeat;
+  background-position: 10px center;
+  width: 500px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+.info {
+  color: #00529B;
+  background-color: #BDE5F8;
+  background-image: url('../img/info.png');
+}
+.success {
+  color: #4F8A10;
+  background-color: #DFF2BF;
+  background-image:url('../img/success.png');
+}
+.error {
+  color: #D8000C;
+  background-color: #FFBABA;
+  background-image: url('../img/error.png');
+}

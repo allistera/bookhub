@@ -18,13 +18,6 @@
             </div>
         </div>
     @endforeach
-    <script id="bookTemplate" type="text/x-jQuery-tmpl">
-        <div>
-            <img src="BookPictures/${picture}" alt="" />
-            <h2>${title}</h2>
-            price: ${formatPrice(price)}
-        </div>
-    </script>
 
         <div class="bookDetails">
             <h2 id="bookDetailsTitle">Book Title</h2>

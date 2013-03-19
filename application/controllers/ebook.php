@@ -68,6 +68,6 @@ class Ebook_Controller extends Base_Controller {
         // Save the ebook to the database
         $ebook->save();
 
-        return Redirect::to('/');
+        return Redirect::to('/')->with('success', "The {$ebook->title} was successfully created!");
     }
 }

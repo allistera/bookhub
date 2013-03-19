@@ -84,6 +84,24 @@
 
         <div class="clearfix"></div>
 
+        @if( Session::has('success') )
+          <div class="success">
+            <p>{{ Session::get('success') }}</p>
+          </div>
+        @endif
+
+        @if( Session::has('error') )
+          <div class="error">
+            <p>{{ Session::get('error') }}</p>
+          </div>
+        @endif
+
+        @if( Session::has('info') )
+          <div class="info">
+            <p>{{ Session::get('info') }}</p>
+          </div>
+        @endif
+
         <div id="content">
 
         @yield('content')

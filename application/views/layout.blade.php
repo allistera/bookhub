@@ -23,7 +23,7 @@
 
         <header>
 
-            <h1>{{ HTML::image('img/logo.png', 'BookHub') }}</h1>
+            <h1><a href="/">{{ HTML::image('img/logo.png', 'BookHub') }}</a></h1>
 
             <nav>
                 <ul>
@@ -43,6 +43,8 @@
                 <ul class="sub_menu" style="display: none">
                     <li><a href="#">My Profile</a></li>
                     <li><a href="#">Download History</a></li>
+                    <li><hr/></li>
+                    <li>{{ HTML::link('ebook/create', 'Upload Ebook') }}</li>
                     <li><hr/></li>
                     <li><a href="#">Logout</a></li>
                 </uL>

@@ -14,8 +14,8 @@
         $("#bookDetailsDesc").html(json.description);
         $("#bookDetailsGenre").html(json.genre);
         $("#bookDetailsPublisher").html(json.publisher);
-        $("#bookDetailsPublishDate").html(json.publish_date);
-        $("#bookDetailsUploadDate").html(json.created_at);
+        $("#bookDetailsPublishDate").html($.datepicker.formatDate('dd M yy', new Date(json.publish_date)));
+        $("#bookDetailsUploadDate").html($.datepicker.formatDate('dd M yy', new Date(json.created_at)));
       });
 
         $(".bookDetails").animate({width:'toggle'},350);

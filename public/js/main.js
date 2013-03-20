@@ -38,8 +38,26 @@
       masonry: {
         columnWidth: 110,
         gutterWidth: 10
+      },
+      getSortData : {
+        whatshot : function ( $elem ) {
+          return $elem.find('.whatshot').text();
+        },
+        latest : function ( $elem ) {
+          return $elem.find('.latest').text();
+        }
       }
+
     });
+
+    $('#sort-by .sortable a').click(function(){
+      var sortName = $(this).attr('href').slice(1);
+      $(this).parent('li').parent('ul').find('li').attr('id', '');
+      $(this).parent('li').attr("id","active");
+      $('#content').isotope({ sortBy : sortName });
+      return false;
+    });
+
 
 
      $(window).scroll(function(){

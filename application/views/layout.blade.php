@@ -26,9 +26,9 @@
             <h1><a href="/">{{ HTML::image('img/logo.png', 'BookHub') }}</a></h1>
 
             <nav>
-                <ul>
-                    <li id="active"><a href="#">Whats Hot</a></li>
-                    <li><a href="#">Latest</a></li>
+                <ul id="sort-by">
+                    <li id="active" class="sortable"><a href="#whatshot">Whats Hot</a></li>
+                    <li class="sortable"><a href="#latest">Latest</a></li>
                     <li class="menuSplitter">{{ HTML::image('img/menuSplitter.gif') }}</li>
                     <li><a href="#" id="genresOpen">Genres</a></li>
                 </ul>

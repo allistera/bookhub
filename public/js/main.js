@@ -30,11 +30,17 @@
         e.stopPropagation();
     });
     
-    $('#content').masonry({
+
+
+    $('#content').isotope({
       itemSelector: '.box',
-      gutterWidth: 30,
-      isAnimated: true
+      animationEngine : 'jquery',
+      masonry: {
+        columnWidth: 110,
+        gutterWidth: 10
+      }
     });
+
 
      $(window).scroll(function(){
       var h = $('#wrap').height();

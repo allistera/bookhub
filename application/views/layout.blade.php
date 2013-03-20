@@ -117,7 +117,7 @@
 
         {{ HTML::script('js/vendor/jquery-1.9.1.min.js') }}
         {{ HTML::script('http://code.jquery.com/ui/1.10.2/jquery-ui.js') }}
-        {{ HTML::script('js/vendor/jquery.masonry.min.js') }}
+        {{ HTML::script('js/vendor/jquery.isotope.min.js') }}
         {{ HTML::script('js/plugins.js') }}
         {{ HTML::script('js/main.js') }}
 

@@ -23,7 +23,7 @@
 
         <div class="bookDetails">
             <h2 id="bookDetailsTitle">Book Title</h2>
-            <p class="bookInfo">12 Upvotes - 2 Downvotes</p>
+            <p class="bookInfo"><span id="bookDetailsUpvotes"></span> Upvotes - <span id="bookDetailsDownvotes"></span>  Downvotes</p>
 
             <div class="clearfix"></div>
             <p class="bookDescription" id="bookDetailsDesc">

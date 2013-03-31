@@ -19,6 +19,12 @@ class Ebook_Controller extends Base_Controller {
         return Response::eloquent(Ebook::find($id));
     }
 
+    public function get_getVotes($id)
+    {
+        $ebookVotes = Ebook::find($id);
+        return json_encode(['upvotes' => $ebookVotes->Upvotes, 'downvotes' => $ebookVotes->Downvotes]);
+    }
+
     public function get_create()
     {
         return View::make('ebook.create');

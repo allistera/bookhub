@@ -12,6 +12,16 @@ class Ebook extends Eloquent
           return $this->has_many('Review');
      }
 
+     public function get_Downvotes()
+     {
+        return Vote::where('type', '=', 0)->where('ebook_id', '=', $this->get_attribute('id'))->count();
+     }
+
+     public function get_Upvotes()
+     {
+        return Vote::where('type', '=', 1)->where('ebook_id', '=', $this->get_attribute('id'))->count();
+     }
+
      public function get_voteCount()
      {
 

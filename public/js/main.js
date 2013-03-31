@@ -17,6 +17,11 @@
         $("#bookDetailsPublishDate").html($.datepicker.formatDate('dd M yy', new Date(json.publish_date)));
         $("#bookDetailsUploadDate").html($.datepicker.formatDate('dd M yy', new Date(json.created_at)));
       });
+      $.getJSON("ebook/getVotes/" + bookID, function(votes) {
+        $("#bookDetailsUpvotes").html(votes.upvotes);
+        $("#bookDetailsDownvotes").html(votes.downvotes);
+      });
+
 
         $(".bookDetails").animate({width:'toggle'},350);
         return false;

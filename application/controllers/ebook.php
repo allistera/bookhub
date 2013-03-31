@@ -8,7 +8,10 @@ class Ebook_Controller extends Base_Controller {
     {
         $ebooks = Ebook::order_by('downloads')->get();
 
-        return View::make('ebook.index')->with('ebooks', $ebooks);
+        // Get a list of all genres
+        $genres = Ebook::group_by('genre')->get(array('genre'));
+
+        return View::make('ebook.index')->with('ebooks', $ebooks)->with('genres', $genres);
     }
 
     public function get_get($id)

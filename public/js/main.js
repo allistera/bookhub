@@ -31,8 +31,9 @@
     });
     
 
+    var $container = $('#content')
 
-    $('#content').isotope({
+    $container.isotope({
       itemSelector: '.box',
       animationEngine : 'jquery',
       masonry: {
@@ -54,10 +55,15 @@
       var sortName = $(this).attr('href').slice(1);
       $(this).parent('li').parent('ul').find('li').attr('id', '');
       $(this).parent('li').attr("id","active");
-      $('#content').isotope({ sortBy : sortName });
+      $container.isotope({ sortBy : sortName });
       return false;
     });
 
+    $('.filters a').click(function(){
+      var selector = $(this).attr('data-filter');
+      $container.isotope({ filter: selector });
+      return false;
+    });
 
 
      $(window).scroll(function(){

@@ -63,21 +63,15 @@
           
             <div id="genresContainer">
               <h2>Genres</h2>
-              
-              <ul>
-                  <li><a href="#">Genre 1</a></li>
-                  <li><a href="#">Genre 2</a></li>
-                  <li><a href="#"> Genre 3</a></li>
-              </ul>
-              <ul>
-                  <li><a href="#">Genre 1</a></li>
-                  <li><a href="#">Genre 2</a></li>
-                  <li><a href="#"> Genre 3</a></li>
-              </ul>
-              <ul>
-                  <li><a href="#">Genre 1</a></li>
-                  <li><a href="#">Genre 2</a></li>
-                  <li><a href="#"> Genre 3</a></li>
+
+              <ul class="filters">
+              @foreach ($genres as $count => $genre)
+                <li><a href="#" data-filter=".{{ $genre->genre }}"> {{ $genre->genre }}</a></li>
+                @if ( $count == 2 )
+                </ul>
+                <ul class="filters">
+                @endif
+              @endforeach
               </ul>
             </div>
           

@@ -3,15 +3,14 @@
 @section('content')
 
     @foreach ($ebooks as $ebook)
-        <div class="box col1 element transition metal" data-category="transition">
-                <p class="whatshot" style="display:none">{{ $ebook->downloads }}</p> 
-                <p class="latest" style="display:none">{{ $ebook->created_at }}</p> 
+        <div class="box col1 element transition {{ $ebook->genre }}" data-category="transition">
+            <p class="whatshot" style="display:none">{{ $ebook->downloads }}</p> 
+            <p class="latest" style="display:none">{{ $ebook->created_at }}</p> 
 
             <a href="#" class="viewDetails" id="{{ $ebook->id }}">{{ HTML::image('uploads/covers/' . $ebook->cover_photo, $ebook->title) }}</a>
 
             <div class="bookQuickDetails" >
                 <h3>{{ $ebook->title }}</h3>
-
 
                 <div class="bookVotes">
                     {{ HTML::image('img/arrow.png', $ebook->title) }}

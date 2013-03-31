@@ -30,3 +30,7 @@ publish
 
 # Ignore database config
 application/config/database.php
+
+# Ignore ebook uploads
+public/uploads/covers/*
+public/uploads/ebooks/*

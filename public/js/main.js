@@ -21,6 +21,17 @@
         $("#bookDetailsUpvotes").html(votes.upvotes);
         $("#bookDetailsDownvotes").html(votes.downvotes);
       });
+      $.getJSON("ebook/getReviews/" + bookID, function(data) {
+        $("#bookDetailsReviews").html('');
+        if(data.length == 0){
+          $("#bookDetailsReviews").append('<h4>No Reviews Found</h4>');
+        }
+        $.each(data, function(i, item){
+          $("#bookDetailsReviews").append('<h4>' + item.review_title + '</h4>');
+          $("#bookDetailsReviews").append('<small>' + item.review_content + '</small><hr/>');
+        });  
+      
+   });
 
         $(".bookDetails").animate({width:'toggle'},350);
         return false;

@@ -45,6 +45,11 @@
             <div class="clearfix"></div>
 
             <h3>Reviews</h3>
+            <hr/>
+
+            <div id="bookDetailsReviews">
+
+            </div>
 
 
             <a href="#" class="bookDownload"><div>Download Now</div></a>

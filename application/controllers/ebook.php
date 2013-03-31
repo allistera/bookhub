@@ -73,4 +73,31 @@ class Ebook_Controller extends Base_Controller {
 
         return Redirect::to('/')->with('success', "The {$ebook->title} was successfully created!");
     }
+
+    public function post_upvote()
+    {
+        $id = Input::get('id');
+
+        $newVote = new Vote(array('user_guid' => '0', 'type' => '1'));
+
+        $ebook = Ebook::find($id);
+
+        $ebook->votes()->insert($newVote);
+
+        return Ebook::find($id)->voteCount;
+
+    }
+
+    public function post_downvote()
+    {
+        $id = Input::get('id');
+
+        $newVote = new Vote(array('user_guid' => '0', 'type' => '0'));
+
+        $ebook = Ebook::find($id);
+
+        $ebook->votes()->insert($newVote);
+
+        return Ebook::find($id)->voteCount;
+    }
 }

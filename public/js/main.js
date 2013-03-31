@@ -21,15 +21,6 @@
         $(".bookDetails").animate({width:'toggle'},350);
         return false;
     });
-    
-    $(document).click(function(){
-        $(".bookDetails").hide();
-    });
-    
-    $(".bookDetails").click(function(e){
-        e.stopPropagation();
-    });
-    
 
     var $container = $('#content')
 
@@ -94,5 +85,39 @@
       userMenu = 'hidden';
   });
 
+  $(".vote_up").click(function(){  
+   //get the id  
+   the_id = $(this).attr('id');  
+   thisBtn = $(this);
+     
+   //the main ajax request  
+    $.ajax({  
+     type: "POST",  
+     data: "id="+ the_id,  
+     url: "ebook/upvote/",  
+     success: function(msg)  
+     {  
+      $('.vote_count' + the_id).html(msg);
+      thisBtn.parent().find(".up").attr("src","img/arrowactive.png");
+     }  
+    });  
+   });  
+  $(".vote_down").click(function(){  
+   //get the id  
+   the_id = $(this).attr('id');
+   thisBtn = $(this);
+     
+   //the main ajax request  
+    $.ajax({  
+     type: "POST",  
+     data: "id="+ the_id,  
+     url: "ebook/downvote/",  
+     success: function(msg)  
+     {  
+      $('.vote_count' + the_id).html(msg);
+      thisBtn.parent().find(".up").attr("src","img/arrowactive.png");
+     }  
+    });  
+   });  
 
   });

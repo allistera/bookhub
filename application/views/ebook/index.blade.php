@@ -13,9 +13,9 @@
                 <h3>{{ $ebook->title }}</h3>
 
                 <div class="bookVotes">
-                    {{ HTML::image('img/arrow.png', $ebook->title) }}
-                    {{ count($ebook->votes) }}
-                    {{ HTML::image('img/arrow.png', $ebook->title, array('class' => 'rotate')) }}
+                    <a href="#" class="vote_up" id="{{ $ebook->id }}">{{ HTML::image('img/arrow.png', $ebook->title, array('class' => 'up')) }}</a>
+                    <span class="vote_count{{ $ebook->id }}">{{ $ebook->voteCount }}</a></span>
+                    <a href="#" class="vote_down" id="{{ $ebook->id }}">{{ HTML::image('img/arrow.png', $ebook->title, array('class' => 'down rotate')) }}</a>
                 </div>
             </div>
         </div>

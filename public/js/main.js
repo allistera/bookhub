@@ -22,7 +22,6 @@
         $("#bookDetailsDownvotes").html(votes.downvotes);
       });
 
-
         $(".bookDetails").animate({width:'toggle'},350);
         return false;
     });
@@ -94,6 +93,9 @@
    //get the id  
    the_id = $(this).attr('id');  
    thisBtn = $(this);
+
+   if(thisBtn.parent().find(".up").attr("src") == "img/arrowactive.png")
+    return false;
      
    //the main ajax request  
     $.ajax({  
@@ -104,6 +106,7 @@
      {  
       $('.vote_count' + the_id).html(msg);
       thisBtn.parent().find(".up").attr("src","img/arrowactive.png");
+
      }  
     });  
    });  
@@ -111,7 +114,10 @@
    //get the id  
    the_id = $(this).attr('id');
    thisBtn = $(this);
-     
+
+   if(thisBtn.parent().find(".down").attr("src") == "img/arrowactive.png")
+    return false;
+
    //the main ajax request  
     $.ajax({  
      type: "POST",  
@@ -120,7 +126,7 @@
      success: function(msg)  
      {  
       $('.vote_count' + the_id).html(msg);
-      thisBtn.parent().find(".up").attr("src","img/arrowactive.png");
+      thisBtn.parent().find(".down").attr("src","img/arrowactive.png");
      }  
     });  
    });  

@@ -54,8 +54,8 @@
             </div>
 
             <div id="searchBox">
-                <form action="#">
-                    <input type="text" placeholder="Search...">
+                <form action="{{ URL::to('ebook/search') }}" method="post">
+                    <input type="text" placeholder="Search..." name="query">
                 </form>
             </div>
 

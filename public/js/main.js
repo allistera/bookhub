@@ -9,7 +9,7 @@
       var bookID = $(this).attr('id');
 
 
-      $.getJSON("ebook/get/" + bookID, function(json) {
+      $.getJSON("/ebook/get/" + bookID, function(json) {
         $("#bookDetailsTitle").html(json.title);
         $("#bookDetailsDesc").html(json.description);
         $("#bookDetailsGenre").html(json.genre);
@@ -17,11 +17,11 @@
         $("#bookDetailsPublishDate").html($.datepicker.formatDate('dd M yy', new Date(json.publish_date)));
         $("#bookDetailsUploadDate").html($.datepicker.formatDate('dd M yy', new Date(json.created_at)));
       });
-      $.getJSON("ebook/getVotes/" + bookID, function(votes) {
+      $.getJSON("/ebook/getVotes/" + bookID, function(votes) {
         $("#bookDetailsUpvotes").html(votes.upvotes);
         $("#bookDetailsDownvotes").html(votes.downvotes);
       });
-      $.getJSON("ebook/getReviews/" + bookID, function(data) {
+      $.getJSON("/ebook/getReviews/" + bookID, function(data) {
         $("#bookDetailsReviews").html('');
         if(data.length == 0){
           $("#bookDetailsReviews").append('<h4>No Reviews Found</h4>');
@@ -105,18 +105,18 @@
    the_id = $(this).attr('id');  
    thisBtn = $(this);
 
-   if(thisBtn.parent().find(".up").attr("src") == "img/arrowactive.png")
+   if(thisBtn.parent().find(".up").attr("src") == "/img/arrowactive.png")
     return false;
      
    //the main ajax request  
     $.ajax({  
      type: "POST",  
      data: "id="+ the_id,  
-     url: "ebook/upvote/",  
+     url: "/ebook/upvote/",  
      success: function(msg)  
      {  
       $('.vote_count' + the_id).html(msg);
-      thisBtn.parent().find(".up").attr("src","img/arrowactive.png");
+      thisBtn.parent().find(".up").attr("src","/img/arrowactive.png");
 
      }  
     });  
@@ -126,18 +126,18 @@
    the_id = $(this).attr('id');
    thisBtn = $(this);
 
-   if(thisBtn.parent().find(".down").attr("src") == "img/arrowactive.png")
+   if(thisBtn.parent().find(".down").attr("src") == "/img/arrowactive.png")
     return false;
 
    //the main ajax request  
     $.ajax({  
      type: "POST",  
      data: "id="+ the_id,  
-     url: "ebook/downvote/",  
+     url: "/ebook/downvote/",  
      success: function(msg)  
      {  
       $('.vote_count' + the_id).html(msg);
-      thisBtn.parent().find(".down").attr("src","img/arrowactive.png");
+      thisBtn.parent().find(".down").attr("src","/img/arrowactive.png");
      }  
     });  
    });  

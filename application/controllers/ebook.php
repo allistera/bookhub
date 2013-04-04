@@ -111,4 +111,14 @@ class Ebook_Controller extends Base_Controller {
 
         return Ebook::find($id)->voteCount;
     }
+
+    public function post_search()
+    {
+        $ebooks = Ebook::where('title', 'LIKE', '%' . Input::get('query') . '%')->get();
+
+        // Get a list of all genres
+        $genres = Ebook::group_by('genre')->get(array('genre'));
+
+        return View::make('ebook.index')->with('ebooks', $ebooks)->with('genres', $genres);
+    }
 }

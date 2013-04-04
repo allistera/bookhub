@@ -37,7 +37,7 @@
         return false;
     });
 
-    var $container = $('#content')
+    var $container = $('#isocontent')
 
     $container.isotope({
       itemSelector: '.box',

@@ -35,6 +35,8 @@
 
 return array(
 
-	'docs' => array('handles' => 'docs'),
+  'messages' => array(
+      'auto' => true
+  ),
 
 );

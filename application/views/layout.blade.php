@@ -30,7 +30,9 @@
                     <li id="active" class="sortable"><a href="#whatshot">Whats Hot</a></li>
                     <li class="sortable"><a href="#latest">Latest</a></li>
                     <li class="menuSplitter">{{ HTML::image('img/menuSplitter.gif') }}</li>
-                    <li><a href="#" id="genresOpen">Genres</a></li>
+                    <?php if(isset($genres)) : ?>
+                        <li><a href="#" id="genresOpen">Genres</a></li>
+                    <?php endif; ?>
                 </ul>
             </nav>
 
@@ -59,6 +61,7 @@
 
         </header>
 
+        <?php if(isset($genres)) : ?>
         <div id="genres">
           
             <div id="genresContainer">
@@ -77,6 +80,7 @@
           
             <div class="clearfix"></div>
         </div>
+        <?php endif; ?>
 
         <div class="clearfix"></div>
 
@@ -106,7 +110,7 @@
 
         <footer id="footer">
             BookHub &copy; 2013
-            <span id="footerLinks"><a href="#">Contact Us</span>
+            <span id="footerLinks">{{ HTML::link('contact', 'Contact Us') }}</span>
         </footer>
 
         {{ HTML::script('js/vendor/jquery-1.9.1.min.js') }}

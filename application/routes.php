@@ -38,6 +38,8 @@ Route::controller('ebook');
 
 Route::controller('user');
 
+Route::controller('contact');
+
 /*
 |--------------------------------------------------------------------------
 | Application 404 & 500 Error Handlers

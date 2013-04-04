@@ -1,7 +1,7 @@
 @layout('layout')
 
 @section('content')
-
+<div id="isocontent"> 
     @foreach ($ebooks as $ebook)
         <div class="box col1 element transition {{ $ebook->genre }}" data-category="transition">
             <p class="whatshot" style="display:none">{{ $ebook->downloads }}</p> 
@@ -20,7 +20,7 @@
             </div>
         </div>
     @endforeach
-
+</div>
         <div class="bookDetails">
             <h2 id="bookDetailsTitle">Book Title</h2>
             <p class="bookInfo"><span id="bookDetailsUpvotes"></span> Upvotes - <span id="bookDetailsDownvotes"></span>  Downvotes</p>
@@ -55,5 +55,5 @@
             <a href="#" class="bookDownload"><div>Download Now</div></a>
 
         </div>
-      
+
 @endsection

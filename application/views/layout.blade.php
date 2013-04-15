@@ -25,42 +25,46 @@
 
             <h1><a href="/">{{ HTML::image('img/logo.png', 'BookHub') }}</a></h1>
 
-            <nav>
-                <ul id="sort-by">
-                    <li id="active" class="sortable"><a href="#whatshot">Whats Hot</a></li>
-                    <li class="sortable"><a href="#latest">Latest</a></li>
-                    <li class="menuSplitter">{{ HTML::image('img/menuSplitter.gif') }}</li>
-                    <?php if(isset($genres)) : ?>
-                        <li><a href="#" id="genresOpen">Genres</a></li>
-                    <?php endif; ?>
-                </ul>
-            </nav>
+            @if(Session::get('loggedin'))
+                <nav>
+                    <ul id="sort-by">
+                        <li id="active" class="sortable"><a href="#whatshot">Whats Hot</a></li>
+                        <li class="sortable"><a href="#latest">Latest</a></li>
+                        <li class="menuSplitter">{{ HTML::image('img/menuSplitter.gif') }}</li>
+                        <?php if(isset($genres)) : ?>
+                            <li><a href="#" id="genresOpen">Genres</a></li>
+                        <?php endif; ?>
+                    </ul>
+                </nav>
 
 
-            <div id="userBox">
-                <a href="#" id="userDetails">
-                    {{ HTML::image('img/menuArrow.gif') }}
-                    John Doe
-                </a>
-                <ul class="sub_menu" style="display: none">
-                    <li><a href="#">My Profile</a></li>
-                    <li><a href="#">Download History</a></li>
-                    <li><hr/></li>
-                    <li>{{ HTML::link('ebook/create', 'Upload Ebook') }}</li>
-                    <li><hr/></li>
-                    <li><a href="#">Logout</a></li>
-                </uL>
 
-            </div>
+                <div id="userBox">
+                    <a href="#" id="userDetails">
+                        {{ HTML::image('img/menuArrow.gif') }}
+                        {{ Session::get('username') }}
+                    </a>
+                    <ul class="sub_menu" style="display: none">
+                        <li><a href="#">My Profile</a></li>
+                        <li><a href="#">Download History</a></li>
+                        <li><hr/></li>
+                        <li>{{ HTML::link('ebook/create', 'Upload Ebook') }}</li>
+                        <li><hr/></li>
+                        <li>{{ HTML::link('user/logout', 'Logout') }}</li>
+                    </uL>
 
-            <div id="searchBox">
-                <form action="{{ URL::to('ebook/search') }}" method="post">
-                    <input type="text" placeholder="Search..." name="query">
-                </form>
-            </div>
+                </div>
+
+                <div id="searchBox">
+                    <form action="{{ URL::to('ebook/search') }}" method="post">
+                        <input type="text" placeholder="Search..." name="query">
+                    </form>
+                </div>
+            @endif
 
         </header>
 
+        @if(Session::get('loggedin'))
         <?php if(isset($genres)) : ?>
         <div id="genres">
           
@@ -81,6 +85,7 @@
             <div class="clearfix"></div>
         </div>
         <?php endif; ?>
+        @endif
 
         <div class="clearfix"></div>
 

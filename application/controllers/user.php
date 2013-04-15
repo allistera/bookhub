@@ -25,17 +25,27 @@ class User_Controller extends Base_Controller {
         //authenticate the user
         if ($adldap->authenticate(Input::get('username'), Input::get('password'))){
             //establish your session and redirect
-            echo 'logged in';
+            Session::put('loggedin', true);
+            Session::put('username', Input::get('username'));
+            
+            return Redirect::home();
+
         }else{
-            echo 'failed to login :: ';
-            echo $adldap->getLastError();
+            Session::flash('error', 'Username and/or Password incorrect, please try again.');
+
+            return Redirect::to('user/login');
         }
 
     }
 
     public function get_logout()
     {
+        Session::forget('loggedin');
+        Session::forget('username');
 
+        Session::flash('success', 'You have successfully logged out!');
+
+        return Redirect::to('user/login');
     }
 
 }

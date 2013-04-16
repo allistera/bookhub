@@ -27,6 +27,14 @@ class Ebook extends Eloquent
         return Vote::where('type', '=', 1)->where('ebook_id', '=', $this->get_attribute('id'))->count();
      }
 
+     public function checkVoted()
+     {
+        $votes = Vote::where('username', '=', Session::get('username'))->where('ebook_id', '=', $this->get_attribute('id'))->get();
+        foreach ($votes as $vote) {
+            return $vote->type;
+        }
+     }
+
      public function get_voteCount()
      {
 

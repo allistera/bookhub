@@ -15,7 +15,7 @@ class Create_Votes_Table {
 			
 			$table->increments('id');
 			$table->integer('ebook_id')->unsigned();
-			$table->string('user_guid');
+			$table->string('username');
 			$table->integer('type');
 			$table->timestamps();
 			

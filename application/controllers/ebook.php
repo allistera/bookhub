@@ -89,7 +89,7 @@ class Ebook_Controller extends Base_Controller {
     {
         $id = Input::get('id');
 
-        $newVote = new Vote(array('user_guid' => '0', 'type' => '1'));
+        $newVote = new Vote(array('username' => Session::get('username'), 'type' => '1'));
 
         $ebook = Ebook::find($id);
 
@@ -103,7 +103,7 @@ class Ebook_Controller extends Base_Controller {
     {
         $id = Input::get('id');
 
-        $newVote = new Vote(array('user_guid' => '0', 'type' => '0'));
+        $newVote = new Vote(array('username' => Session::get('username'), 'type' => '0'));
 
         $ebook = Ebook::find($id);
 

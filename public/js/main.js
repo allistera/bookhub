@@ -16,6 +16,7 @@
         $("#bookDetailsPublisher").html(json.publisher);
         $("#bookDetailsPublishDate").html($.datepicker.formatDate('dd M yy', new Date(json.publish_date)));
         $("#bookDetailsUploadDate").html($.datepicker.formatDate('dd M yy', new Date(json.created_at)));
+        $("#bookDetailsDownload").attr("href", "/ebook/download/" + json.id);
       });
       $.getJSON("/ebook/getVotes/" + bookID, function(votes) {
         $("#bookDetailsUpvotes").html(votes.upvotes);

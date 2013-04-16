@@ -52,7 +52,7 @@
             </div>
 
 
-            <a href="#" class="bookDownload"><div>Download Now</div></a>
+            <a href="#" class="bookDownload" id="bookDetailsDownload" target="_blank"><div>Download Now</div></a>
 
         </div>
 

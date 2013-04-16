@@ -121,4 +121,20 @@ class Ebook_Controller extends Base_Controller {
 
         return View::make('ebook.index')->with('ebooks', $ebooks)->with('genres', $genres);
     }
+
+    public function get_download($ebookID)
+    {
+        // Get the ebook
+        $ebook = Ebook::find($ebookID);
+
+        // Log the download
+        $history = new History;
+
+        $history->ebook_id = $ebook->id;
+        $history->username = Session::get('username');
+
+        $history->save();        
+
+        return Response::download(path('public') . 'uploads/ebooks/' . $ebook->file_name, Str::slug($ebook->title) . '.pdf');
+    }
 }

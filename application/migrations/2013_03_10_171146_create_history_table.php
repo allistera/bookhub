@@ -15,7 +15,7 @@ class Create_History_Table {
 			
 			$table->increments('id');
 			$table->integer('ebook_id')->unsigned();
-			$table->string('user_guid');
+			$table->string('username');
 			$table->timestamps();
 			
 			$table->foreign('ebook_id')->references('id')->on('ebooks');

@@ -41,6 +41,7 @@
                     <a href="#" id="userDetails">
                         {{ HTML::image('img/menuArrow.gif') }}
                         {{ Session::get('username') }}
+                        {{ HTML::image('img/usericon.gif', 'User', ['style' => 'height: 30px; padding: 0; margin: -5px -5px -5px 0; float:right']) }}
                     </a>
                     <ul class="sub_menu" style="display: none">
                         <li>{{ HTML::link('user/history', 'Download History') }}</li>

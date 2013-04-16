@@ -37,16 +37,13 @@
                     </ul>
                 </nav>
 
-
-
                 <div id="userBox">
                     <a href="#" id="userDetails">
                         {{ HTML::image('img/menuArrow.gif') }}
                         {{ Session::get('username') }}
                     </a>
                     <ul class="sub_menu" style="display: none">
-                        <li><a href="#">My Profile</a></li>
-                        <li><a href="#">Download History</a></li>
+                        <li>{{ HTML::link('user/history', 'Download History') }}</li>
                         <li><hr/></li>
                         <li>{{ HTML::link('ebook/create', 'Upload Ebook') }}</li>
                         <li><hr/></li>

@@ -6,8 +6,6 @@ class User_Controller extends Base_Controller {
 
 	public function get_login()
     {
-        
-
         return View::make('user.login');
     }
 
@@ -46,6 +44,14 @@ class User_Controller extends Base_Controller {
         Session::flash('success', 'You have successfully logged out!');
 
         return Redirect::to('user/login');
+    }
+
+    public function get_history()
+    {
+        // Get all history for current logged in user
+        $history = History::where('username', '=', Session::get('username'))->get();
+        
+        return View::make('user.history')->with('history', $history);
     }
 
 }

@@ -451,3 +451,10 @@ input.placeholder-text, textarea.placeholder-text  {
   z-index: 1;
 }
 
+.downloadHistory{
+    width: 100%;
+    border: 1px solid #666;
+}
+.downloadHistory td{
+    padding: 5px;
+}

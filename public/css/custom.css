@@ -87,7 +87,7 @@ header{
         font-size: 12px;
         font-weight: 500;
         border: 1px solid #C9C9C9;
-        padding: 10px;
+        padding: 10px 7px 7px 7px;
         min-width: 100px;
                 -webkit-border-radius: 20px;
                 -moz-border-radius: 20px;
@@ -201,7 +201,7 @@ footer{
         -webkit-box-shadow:5px 8px 10px #1F1F1F;
         box-shadow: 5px 8px 10px #1F1F1F;
     }
-        .viewDetails img{width: 300px;}
+        .viewDetails img{width: 300px !important;}
         .bookQuickDetails
         {
             background-color:rgba(255,255,255,0.1);

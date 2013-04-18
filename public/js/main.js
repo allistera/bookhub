@@ -62,7 +62,7 @@
       var sortName = $(this).attr('href').slice(1);
       $(this).parent('li').parent('ul').find('li').attr('id', '');
       $(this).parent('li').attr("id","active");
-      $container.isotope({ sortBy : sortName });
+      $container.isotope({ sortBy : sortName , sortAscending : false});
       return false;
     });
 

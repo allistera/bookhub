@@ -6,7 +6,7 @@ class Ebook_Controller extends Base_Controller {
 
 	public function get_index()
     {
-        $ebooks = Ebook::order_by('downloads')->get();
+        $ebooks = Ebook::order_by('downloads', 'desc')->get();
 
         // Get a list of all genres
         $genres = Ebook::group_by('genre')->get(array('genre'));
@@ -133,7 +133,12 @@ class Ebook_Controller extends Base_Controller {
         $history->ebook_id = $ebook->id;
         $history->username = Session::get('username');
 
-        $history->save();        
+        $history->save();
+
+        // Increment downloads
+        $ebook->downloads = $ebook->downloads + 1;
+
+        $ebook->save();
 
         return Response::download(path('public') . 'uploads/ebooks/' . $ebook->file_name, Str::slug($ebook->title) . '.pdf');
     }

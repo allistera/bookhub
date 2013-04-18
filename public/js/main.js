@@ -106,7 +106,7 @@
    the_id = $(this).attr('id');  
    thisBtn = $(this);
 
-   if(thisBtn.parent().find(".up").attr("src") == "/img/arrowactive.png")
+   if(thisBtn.parent().find(".down").attr("src") == "/img/arrowactive.png" || thisBtn.parent().find(".up").attr("src") == "/img/arrowactive.png")
     return false;
      
    //the main ajax request  
@@ -127,7 +127,7 @@
    the_id = $(this).attr('id');
    thisBtn = $(this);
 
-   if(thisBtn.parent().find(".down").attr("src") == "/img/arrowactive.png")
+   if(thisBtn.parent().find(".down").attr("src") == "/img/arrowactive.png" || thisBtn.parent().find(".up").attr("src") == "/img/arrowactive.png")
     return false;
 
    //the main ajax request  

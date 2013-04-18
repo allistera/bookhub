@@ -16,13 +16,21 @@
                     @if ($ebook->checkVoted() == '1')
                         {{ HTML::image('img/arrowactive.png', $ebook->title, array('class' => 'up')) }}
                     @else
-                        <a href="#" class="vote_up" id="{{ $ebook->id }}">{{ HTML::image('img/arrow.png', $ebook->title, array('class' => 'up')) }}</a>
+                        @if ($ebook->checkVoted() == '0')
+                            <a href="#" class="" id="{{ $ebook->id }}">{{ HTML::image('img/arrow.png', $ebook->title, array('class' => 'up')) }}</a>
+                        @else
+                            <a href="#" class="vote_up" id="{{ $ebook->id }}">{{ HTML::image('img/arrow.png', $ebook->title, array('class' => 'up')) }}</a>
+                        @endif
                     @endif
                     <span class="vote_count{{ $ebook->id }}">{{ $ebook->voteCount }}</a></span>
                     @if ($ebook->checkVoted() == '0')
                         {{ HTML::image('img/arrowactive.png', $ebook->title, array('class' => 'down rotate')) }}
                     @else
-                        <a href="#" class="vote_down" id="{{ $ebook->id }}">{{ HTML::image('img/arrow.png', $ebook->title, array('class' => 'down rotate')) }}</a>
+                        @if ($ebook->checkVoted() == '1')
+                            <a href="#" class="" id="{{ $ebook->id }}">{{ HTML::image('img/arrow.png', $ebook->title, array('class' => 'down rotate')) }}</a>
+                        @else
+                            <a href="#" class="vote_down" id="{{ $ebook->id }}">{{ HTML::image('img/arrow.png', $ebook->title, array('class' => 'down rotate')) }}</a>
+                        @endif
                     @endif
                 </div>
             </div>

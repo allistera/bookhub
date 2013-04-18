@@ -108,7 +108,7 @@ class adLDAP {
     * 
     * @var array
     */
-    protected $domainControllers = array("192.168.0.11");
+    protected $domainControllers = array('192.168.0.11');
 	
     /**
     * Optional account with higher privileges for searching

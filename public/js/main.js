@@ -62,7 +62,12 @@
       var sortName = $(this).attr('href').slice(1);
       $(this).parent('li').parent('ul').find('li').attr('id', '');
       $(this).parent('li').attr("id","active");
-      $container.isotope({ sortBy : sortName , sortAscending : false});
+      if(sortName == 'whatshot'){
+        $container.isotope({ sortBy : 'original-order' });
+      }else{
+        $container.isotope({ sortBy : sortName , sortAscending : false});
+      }
+      
       return false;
     });
 

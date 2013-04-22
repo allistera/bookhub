@@ -10,7 +10,7 @@
             <a href="#" class="viewDetails" id="{{ $ebook->id }}">{{ HTML::image('uploads/covers/' . $ebook->cover_photo, $ebook->title) }}</a>
 
             <div class="bookQuickDetails" >
-                <h3>{{ $ebook->title }}</h3>
+                <h3>{{ Str::limit_exact($ebook->title, 27) }}</h3>
 
                 <div class="bookVotes">
                     @if ($ebook->checkVoted() == '1')

@@ -89,22 +89,17 @@
      });
 
 
-    var userMenu = 'hidden';
-    $("#userDetails").click(function(){
-      if(userMenu == 'hidden'){
-        $('.sub_menu').show();
-        userMenu = 'showen';
-      }else{
-        $('.sub_menu').hide();
-        userMenu = 'hidden';
-      }
 
+  $('#userDetails').click(function() {
+    $('.sub_menu').toggle('slow', function() {});
+  });
+  
+    $(".sub_menu").mouseenter(function(){
+      
+    }).mouseleave(function(){
+      $(this).hide();
     });
 
-  $('.sub_menu').mouseleave(function(){
-    $(this).hide();
-      userMenu = 'hidden';
-  });
 
   $(".vote_up").click(function(){  
    //get the id  

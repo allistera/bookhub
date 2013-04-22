@@ -71,8 +71,9 @@
 
               <ul class="filters">
               @foreach ($genres as $count => $genre)
-                <li><a href="#" data-filter=".{{ $genre->genre }}"> {{ $genre->genre }}</a></li>
-                @if ( $count == 2 )
+              <?php $count++ ?>
+                <li><a href="#" data-filter=".{{ Str::slug($genre->genre) }}"> {{ $genre->genre }}</a></li>
+                @if ( ($count % 3) == 0)
                 </ul>
                 <ul class="filters">
                 @endif

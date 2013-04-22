@@ -3,7 +3,7 @@
 @section('content')
 <div id="isocontent"> 
     @foreach ($ebooks as $ebook)
-        <div class="box col1 element transition {{ $ebook->genre }}" data-category="transition">
+        <div class="box col1 element transition {{ Str::slug($ebook->genre) }}" data-category="transition">
             <p class="whatshot" style="display:none">{{ $ebook->downloads }}</p> 
             <p class="latest" style="display:none">{{ $ebook->created_at }}</p> 
 
